@@ -75,14 +75,17 @@ nav a:hover{
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 1;
+  visibility: hidden;
 
   /* Requirement 3a code here*/
   margin: 40px;
-
+  position: relative;
 }
 
 /* Requirement 3b code here*/
-
+.skip a:hover{
+  visibility: visible;
+}
 
 /* Requirement 4 code here*/
 *:focus{
@@ -119,13 +122,15 @@ header{
 }
 
 .about-image, .method-image, .clients-image, .contact-image{
-  grid-column: 1 / span 4;
+  grid-column: 1;
+  grid-column-end: span 4;
   max-height: 700px;
   overflow: hidden;
 }
 
 .about-image{
-  grid-row: 2 / span 1;
+  grid-row: 2;
+  grid-row-end: span 1;
 }
 
 .about{
