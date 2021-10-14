@@ -33,8 +33,8 @@ nav li{
 
 nav{
   background-color: #ddd;
-  padding: 25px 0;    
-  text-align: left;   
+  padding: 25px 0;
+  text-align: left;
 }
 
 header p{
@@ -60,10 +60,12 @@ nav a{
   color: black;
   font-weight: bold;
   /* Requirement 1 code here*/
+  text-decoration: none;
 }
 
-  /* Requirement 2 code here*/
-
+nav a:hover{
+  text-decoration: underline;
+}
 
 
 .skip a{
@@ -75,19 +77,24 @@ nav a{
   z-index: 1;
 
   /* Requirement 3a code here*/
-  
+  margin: 40px;
+
 }
 
 /* Requirement 3b code here*/
 
 
 /* Requirement 4 code here*/
-
-
+*:focus{
+  border: 2px green;
+}
 
 .container{
   /* Requirement 5 code here*/
-
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: repeat(5, auto);
+  grid-row-gap: 15px;
 }
 
 /* Remainder of requirements here: */
@@ -100,29 +107,55 @@ header{
   height: 400px; /* Parallax effect */
 
   /* YOUR CODE HERE; */
+  grid-column: 1 / -1;
+  grid-row: 1 / span 1;
+  background-image: url('/images/header.jpg');
+  background-repeat: no-repeat;
 }
 
 
+.about, .method, .clients, .contact{
+  grid-column: 2 / span 1;
+}
+
+.about-image, .method-image, .clients-image, .contact-image{
+  grid-column: 1 / span 4;
+  max-height: 700px;
+  overflow: hidden;
+}
 
 .about-image{
-  
+  grid-row: 2 / span 1;
 }
 
 .about{
- 
+  grid-row-start: 2;
 }
 
 .method-image{
- 
+  grid-row: 3 / span 1;
 }
 
 .method{
-  
+  grid-row-start: 3;
 }
 
 /* You need to write some of your own selectors here */
+.clients{
+  grid-row-start: 4;
+}
 
+.clients-image{
+  grid-row: 4 / span 1;
+}
 
+.contact{
+  grid-row-start: 5;
+}
+
+.contact-image{
+  grid-row: 5 / span 1;
+}
 
 .text-block{
   background-color: rgba(255, 255, 255, .8);
@@ -130,60 +163,34 @@ header{
   padding: 30px;
 
   /* Your code here */
-
+  align-self: center;
 }
 
 @media screen and (min-width: 800px){
   nav{
     padding: 30px 0;
-
+    text-align: right;
     /* Your code here */
   }
 
   .container{
-   
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: repeat(5, 400px);
   }
 
-  
-
-  .about-image{
-  
+  .about, .clients, .method-image, .contact-image{
+    grid-column: 3 / span 2;
   }
 
-  .about{
-    
+  .method, .contact, .about-image, .clients-image{
+    grid-column: 2 / span 2;
   }
-
-  .method-image{
-    
-  }
-
-  .method{
-   
-  }
-
-  .clients-image{
-    
-  }
-
-  .clients{
-    
-  }
-
-  .contact-image{
-    
-  }
-
-  .contact{
-    
-  }
-
 }
 
 
 /** Code for prefers reduced motion **/
 /* Make no changes below this line.
-   *************************************** 
+   ***************************************
    */
 @media screen and (prefers-reduced-motion: reduce){
   /*Turn off scroll*/
