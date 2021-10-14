@@ -119,15 +119,13 @@ header{
 }
 
 .about-image, .method-image, .clients-image, .contact-image{
-  grid-column: 1;
-  grid-row-end: span 4;
+  grid-column: 1 / span 4;
   max-height: 700px;
   overflow: hidden;
 }
 
 .about-image{
-  grid-row: 2;
-  grid-row-end: span 1;
+  grid-row: 2 / span 1;
 }
 
 .about{
@@ -135,8 +133,7 @@ header{
 }
 
 .method-image{
-  grid-row: 3;
-  grid-row-end: span 1;
+  grid-row: 3 / span 1;
 }
 
 .method{
@@ -149,8 +146,7 @@ header{
 }
 
 .clients-image{
-  grid-row: 4;
-  grid-row-end: span 1;
+  grid-row: 4 / span 1;
 }
 
 .contact{
@@ -158,8 +154,7 @@ header{
 }
 
 .contact-image{
-  grid-row: 5;
-  grid-row-end: span 1;
+  grid-row: 5 / span 1;
 }
 
 .text-block{
@@ -185,12 +180,12 @@ header{
 
   .about, .clients, .method-image, .contact-image{
     grid-column: 3;
-    grid-row-end: span 2;
+    grid-column-end: span 2;
   }
 
   .method, .contact, .about-image, .clients-image{
     grid-column: 2;
-    grid-row-end: span 2;
+    grid-column-end: span 2;
   }
 }
 
